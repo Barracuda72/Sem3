@@ -1,0 +1,21 @@
+#!/usr/bin/gprolog --consult-file
+country(usa).
+country(india).
+country(china).
+country(brazil).
+
+population(usa, 203).
+population(india, 548).
+population(china, 900).
+population(brazil, 108).
+
+area(usa, 5).
+area(india, 3).
+area(china, 9).
+area(brazil, 8).
+
+biggest(C) :- country(C), population(C, N), N > 200, area(C, P), P > 5.
+
+req1(X) :- country(X), area(X, Y), Y >= 3, Y =< 8.
+
+req2(X) :- country(X), population(X, Y), ((Y >= 600); (Y =< 300)).

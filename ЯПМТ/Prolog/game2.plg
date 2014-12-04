@@ -1,0 +1,8 @@
+#!/usr/bin/gprolog --consult-file
+% :- dynamic(stored/1).
+
+hold(A) :- stored(X), X < A, write('Меньше'), nl; stored(X), X > A, write('Больше'), nl ; X = A, write('Угадали!'), nl, halt, !; (write('Неизвестная ошибка'), nl, true).
+
+loop :- write('Ваше предположение? '), read_integer(A), hold(A), loop.
+
+begin :- randomize, random(1, 100, X), nl, assertz(stored(X)), loop.

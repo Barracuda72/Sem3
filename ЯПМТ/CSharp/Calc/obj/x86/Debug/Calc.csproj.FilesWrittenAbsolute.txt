@@ -1,0 +1,6 @@
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Calc/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Calc/obj/x86/Debug/Calc.gtk-gui.gui.stetic
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Calc/bin/Debug/Calc.exe.mdb
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Calc/bin/Debug/Calc.exe
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Calc/obj/x86/Debug/Calc.exe
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Calc/obj/x86/Debug/Calc.exe.mdb

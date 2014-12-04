@@ -1,0 +1,43 @@
+#!/usr/bin/gprolog --consult-file
+
+:- dynamic(sum/1).
+
+client(vasya).
+client(petya).
+client(masha).
+
+oper(vasya, get, 1000).
+oper(vasya, get, 4690).
+oper(vasya, put, 8881).
+oper(vasya, put, 5467).
+
+oper(petya, get, 1000000000000).
+oper(petya, get, 10000000).
+oper(petya, put, 10000000000000).
+
+oper(masha, get, 100).
+oper(masha, put, 200).
+oper(masha, get, 200).
+
+do_calc(A, B, C, get) :- A is B - C.
+do_calc(A, B, C, put) :- A is B + C.
+
+sum_itog(S) :- write('Введите имя '), read(N), oper(N, B, Chislo), retract(sum(S)), do_calc(S1, S, Chislo, B), asserta(sum(S1)), fail; sum(S).
+
+calc_sum :- abolish(sum/1), asserta(sum(0)), sum_itog(S), write('Итоговая сумма '), write(S), nl.
+
+help :- write('Доступные операции:'), nl, write('  1 - положить деньги'), nl, write('  2 - снять деньги'), nl, write('  3 - получить распечатку'), nl.
+
+ask_main(X) :- (write('Выберите операцию [1-3]: '), read_integer(X), X > 0, X < 4), !; write('Неверный код операции!'), nl, ask_main(X).
+
+ask_client(X) :- (write('Введите имя клиента: '), read(X), client(X)), !; write('Нет такого клиента!'), nl, ask_client(X).
+
+ask_sum(X) :- write('Введите сумму: '), read_integer(X), nl.
+
+process(3, Y) :- calc_sum(Y).
+
+process(1, Y) :- ask_sum(P), assertz(oper(Y, put, P)).
+process(2, Y) :- ask_sum(P), assertz(oper(Y, get, P)).
+
+menu :- help, ask_main(X), ask_client(Y), process(X, Y), menu.
+

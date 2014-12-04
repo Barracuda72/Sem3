@@ -1,0 +1,6 @@
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Draw/Draw/obj/x86/Release/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Draw/Draw/obj/x86/Release/Draw.gtk-gui.gui.stetic
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Draw/Draw/bin/Release/Draw.exe.mdb
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Draw/Draw/bin/Release/Draw.exe
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Draw/Draw/obj/x86/Release/Draw.exe
+/home/barracuda/Рабочий стол/Уеба/2 курс/1 семестр/ЯПМТ/2014/CSharp/Draw/Draw/obj/x86/Release/Draw.exe.mdb

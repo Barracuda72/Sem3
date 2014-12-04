@@ -1,0 +1,37 @@
+#!/usr/bin/gprolog --consult-file
+student(ivanov).
+student(petrov).
+student(sidorov).
+student(andreev).
+student(kovalev).
+
+predmet(algebra, ivanov, 5).
+predmet(algebra, petrov, 4).
+predmet(algebra, sidorov, 4).
+predmet(algebra, andreev, 2).
+predmet(algebra, kovalev, 4).
+
+predmet(geometry, ivanov, 5).
+predmet(geometry, petrov, 3).
+predmet(geometry, sidorov, 5).
+predmet(geometry, andreev, 3).
+predmet(geometry, kovalev, 4).
+
+predmet(history, ivanov, 5).
+predmet(history, petrov, 2).
+predmet(history, sidorov, 5).
+predmet(history, andreev, 3).
+predmet(history, kovalev, 4).
+
+five(X) :- student(X), predmet(algebra, X, 5), predmet(geometry, X, 5), predmet(history, X, 5).
+
+two(X) :- student(X), predmet(_, X, 2).
+
+matem(X) :- student(X), predmet(algebra, X, Y), Y > 3, predmet(geometry, X, Z), Z > 3.
+
+:-
+five(ivanov).
+five(X).
+matem(sidorov).
+predmet(history, X, 2).
+matem(X).

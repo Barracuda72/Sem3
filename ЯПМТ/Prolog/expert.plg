@@ -1,0 +1,25 @@
+#!/usr/bin/gprolog --consult-file
+
+:- dynamic(xpos/1).
+:- dynamic(xneg/1).
+
+% Negation
+not(G) :- call(G),!,fail.
+not(G).
+
+save(X, yes) :- asserta(xpos(X)).
+save(X, no) :- asserta(xneg(X)), fail.
+% save(X, _) :- write('Некорректный ответ!'), nl, halt.
+
+ask(X) :- write('Вопрос: '), write(X), write('? '), read(R), nl, save(X, R).
+
+pos(X) :- xpos(X),!.
+pos(X) :- not(xneg(X)),!,ask(X).
+
+cat('Кошка') :- pos('длинная шерсть'), pos('видит в темноте'), pos('ловит мышей'), pos('любит молоко').
+cat('Еж') :- pos('есть колючки'), pos('живет в норе'), pos('ловит мышей'), pos('любит молоко').
+cat('Лиса') :- pos('длинная шерсть'), pos('живет в норе'), pos('ловит мышей'), pos('хитрое').
+cat('Медведь') :- pos('длинная шерсть'), pos('любит малину'), pos('спит зимой'), pos('длинная шерсть').
+cat('Неизвестное животное').
+
+consult :- cat(X), !, write('Ответ: '), write(X).

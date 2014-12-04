@@ -1,0 +1,22 @@
+#!/usr/bin/gprolog --consult-file
+% :- dynamic(stored/1).
+
+% abolish = retract, но не совсем
+
+del(X) :- X > 0, X < 4, stored(E), S is E - X, S >= 0, abolish(stored/1), asserta(stored(S)).
+
+prints(Z) :- del(Z), write('Спичек осталось '), stored(S), write(S), nl.
+
+test :- write('   Сколько спичек взять? '), read_integer(Z), nl, (prints(Z), !; (write('   Нельзя взять столько спичек!'), nl, test)). 
+
+game_over(Q) :- stored(S), ((S = 0, write(Q), write(' проиграл'), nl, halt), !;  true).
+
+gamer(X) :- write('Игрок '), write(X), write(' : '), nl, test, game_over('Игрок').
+
+artif(Z) :- random(1, 3, X), write('Компьютер берет '), write(X), write(' спичек'), nl, prints(X), game_over('Компьютер').
+
+% loop :- gamer(1), gamer(2), loop.
+
+loop :- gamer(1), artif(2), loop.
+
+begin :- S is 23, randomize, assertz(stored(S)), loop.

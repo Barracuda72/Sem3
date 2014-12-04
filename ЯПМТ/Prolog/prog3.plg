@@ -1,0 +1,13 @@
+pravil(yaroslav, 1019, 1054).
+pravil(izyaslav, 1055, 1077).
+pravil(vsevolod, 1078, 1092).
+pravil(svyatopolk, 1093, 1112).
+pravil(vladimir, 1113, 1125).
+pravil(mstislav, 1026, 1132).
+
+velikiy(X, Y) :- pravil(X, S, E), S =< Y, E >= Y.
+
+% vspom(X) :- X =< 1080, X >= 1050.
+% zapr1(X) :- pravil(X, S, E), S =< 1050, E >= 1050; pravil(X, S, E), S >= 1050, E =< 1080; !, pravil(X, S, E), S =< 1080, E >= 1080.
+vs(X, Y) :- X =< 1050, Y >= 1050; X >= 1050, X =< 1080, Y >= 1080; X >= 1050, Y =< 1080.
+zapr1(X) :- pravil(X, S, E), vs(S, E).

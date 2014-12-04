@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Draw/MainWindow.cs">
+    <Files>
+      <File FileName="Draw/Program.cs" Line="1" Column="1" />
+      <File FileName="Draw/MainWindow.cs" Line="46" Column="5" />
+      <File FileName="Draw/Point.cs" Line="1" Column="1" />
+      <File FileName="Draw/Figure.cs" Line="1" Column="1" />
+      <File FileName="Draw/Circle.cs" Line="1" Column="1" />
+      <File FileName="Draw/Square.cs" Line="1" Column="1" />
+      <File FileName="Draw/Triangle.cs" Line="1" Column="1" />
+      <File FileName="Draw/PointFactory.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
